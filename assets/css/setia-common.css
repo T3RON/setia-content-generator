@@ -1,0 +1,642 @@
+/**
+ * SETIA Content Generator - Common Styles
+ * استایل مشترک برای همه صفحات افزونه با طراحی مدرن Flat Design مشابه Windows 11
+ */
+
+:root {
+    --setia-primary: #0078d7;
+    --setia-primary-hover: #106ebe;
+    --setia-secondary: #6264a7;
+    --setia-success: #107c10;
+    --setia-danger: #d13438;
+    --setia-warning: #ffb900;
+    --setia-info: #2196f3;
+    --setia-light: #f3f2f1;
+    --setia-dark: #323130;
+    --setia-text: #323130;
+    --setia-text-light: #605e5c;
+    --setia-bg: #ffffff;
+    --setia-border: #edebe9;
+    --setia-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --setia-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --setia-radius: 8px;
+    --setia-transition: all 0.2s ease-in-out;
+}
+
+/* تنظیمات عمومی */
+.setia-wrapper {
+    font-family: 'IRANSans', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+    color: var(--setia-text);
+    background-color: var(--setia-bg);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--setia-radius);
+    box-shadow: var(--setia-shadow);
+}
+
+.setia-wrapper * {
+    box-sizing: border-box;
+}
+
+/* هدر صفحه */
+.setia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--setia-border);
+}
+
+.setia-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.setia-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--setia-dark);
+}
+
+.setia-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.setia-version {
+    background-color: var(--setia-light);
+    color: var(--setia-text-light);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ناوبری تب‌ها */
+.setia-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--setia-border);
+    padding-bottom: 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+.setia-tab-item {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--setia-text-light);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--setia-transition);
+    white-space: nowrap;
+}
+
+.setia-tab-item:hover {
+    color: var(--setia-primary);
+}
+
+.setia-tab-item.active {
+    color: var(--setia-primary);
+    border-bottom: 2px solid var(--setia-primary);
+}
+
+/* محتوای تب‌ها */
+.setia-tab-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.setia-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* کارت‌ها */
+.setia-card {
+    background-color: var(--setia-bg);
+    border-radius: var(--setia-radius);
+    box-shadow: var(--setia-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--setia-transition);
+    border: 1px solid var(--setia-border);
+}
+
+.setia-card:hover {
+    box-shadow: var(--setia-shadow-hover);
+}
+
+.setia-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--setia-border);
+}
+
+.setia-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--setia-dark);
+}
+
+.setia-card-description {
+    color: var(--setia-text-light);
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* فرم‌ها */
+.setia-form-group {
+    margin-bottom: 20px;
+}
+
+.setia-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--setia-text);
+}
+
+.setia-form-input,
+.setia-form-select,
+.setia-form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid var(--setia-border);
+    border-radius: var(--setia-radius);
+    background-color: var(--setia-bg);
+    color: var(--setia-text);
+    transition: var(--setia-transition);
+}
+
+.setia-form-input:focus,
+.setia-form-select:focus,
+.setia-form-textarea:focus {
+    outline: none;
+    border-color: var(--setia-primary);
+    box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2);
+}
+
+.setia-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.setia-form-select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23606060" d="M0 0l6 6 6-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    padding-left: 30px;
+}
+
+/* چک باکس و رادیو */
+.setia-form-checkbox,
+.setia-form-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.setia-form-checkbox input,
+.setia-form-radio input {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* دکمه‌ها */
+.setia-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--setia-radius);
+    cursor: pointer;
+    transition: var(--setia-transition);
+    text-decoration: none;
+    gap: 8px;
+}
+
+.setia-btn-primary {
+    background-color: var(--setia-primary);
+    color: white;
+}
+
+.setia-btn-primary:hover {
+    background-color: var(--setia-primary-hover);
+}
+
+.setia-btn-secondary {
+    background-color: var(--setia-light);
+    color: var(--setia-text);
+}
+
+.setia-btn-secondary:hover {
+    background-color: #e1dfdd;
+}
+
+.setia-btn-success {
+    background-color: var(--setia-success);
+    color: white;
+}
+
+.setia-btn-success:hover {
+    background-color: #0b6a0b;
+}
+
+.setia-btn-danger {
+    background-color: var(--setia-danger);
+    color: white;
+}
+
+.setia-btn-danger:hover {
+    background-color: #c12b30;
+}
+
+.setia-btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.setia-btn-lg {
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.setia-btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* فضای انعطاف‌پذیر */
+.setia-flex {
+    display: flex;
+}
+
+.setia-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.setia-flex-between {
+    justify-content: space-between;
+}
+
+.setia-flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.setia-flex-end {
+    justify-content: flex-end;
+}
+
+.setia-flex-gap {
+    gap: 15px;
+}
+
+/* اعلان‌ها */
+.setia-alert {
+    padding: 12px 16px;
+    border-radius: var(--setia-radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setia-alert-success {
+    background-color: rgba(16, 124, 16, 0.1);
+    color: var(--setia-success);
+    border: 1px solid rgba(16, 124, 16, 0.2);
+}
+
+.setia-alert-danger {
+    background-color: rgba(209, 52, 56, 0.1);
+    color: var(--setia-danger);
+    border: 1px solid rgba(209, 52, 56, 0.2);
+}
+
+.setia-alert-warning {
+    background-color: rgba(255, 185, 0, 0.1);
+    color: #8a6400;
+    border: 1px solid rgba(255, 185, 0, 0.2);
+}
+
+.setia-alert-info {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: var(--setia-info);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+/* بخش فوتر */
+.setia-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--setia-border);
+}
+
+/* نشانگر بارگذاری */
+.setia-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--setia-primary);
+    border-radius: 50%;
+    animation: setia-spin 1s linear infinite;
+}
+
+@keyframes setia-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* مدال */
+.setia-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.setia-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.setia-modal {
+    background-color: var(--setia-bg);
+    border-radius: var(--setia-radius);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.setia-modal-overlay.active .setia-modal {
+    transform: translateY(0);
+}
+
+.setia-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--setia-border);
+}
+
+.setia-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.setia-modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--setia-text-light);
+    transition: var(--setia-transition);
+}
+
+.setia-modal-close:hover {
+    color: var(--setia-danger);
+}
+
+.setia-modal-body {
+    padding: 20px;
+}
+
+.setia-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+    border-top: 1px solid var(--setia-border);
+}
+
+/* پاسخگویی */
+@media (max-width: 768px) {
+    .setia-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .setia-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .setia-flex {
+        flex-direction: column;
+    }
+}
+
+/* نمایش/عدم نمایش */
+.setia-hidden {
+    display: none !important;
+}
+
+/* توضیحات راهنما */
+.setia-form-help {
+    font-size: 12px;
+    color: var(--setia-text-light);
+    margin-top: 5px;
+}
+
+/* نشانگر اعتبارسنجی */
+.setia-form-input.is-invalid,
+.setia-form-select.is-invalid,
+.setia-form-textarea.is-invalid {
+    border-color: var(--setia-danger);
+}
+
+.setia-form-feedback {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.setia-form-feedback.invalid {
+    color: var(--setia-danger);
+}
+
+/* جدول */
+.setia-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+.setia-table th,
+.setia-table td {
+    padding: 12px 15px;
+    text-align: right;
+    border-bottom: 1px solid var(--setia-border);
+}
+
+.setia-table th {
+    font-weight: 600;
+    color: var(--setia-dark);
+    background-color: var(--setia-light);
+}
+
+.setia-table tr:last-child td {
+    border-bottom: none;
+}
+
+.setia-table tr:hover td {
+    background-color: rgba(0, 120, 215, 0.05);
+}
+
+/* پاگینیشن */
+.setia-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.setia-pagination-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--setia-radius);
+    background-color: var(--setia-light);
+    color: var(--setia-text);
+    cursor: pointer;
+    transition: var(--setia-transition);
+}
+
+.setia-pagination-item:hover {
+    background-color: #e1dfdd;
+}
+
+.setia-pagination-item.active {
+    background-color: var(--setia-primary);
+    color: white;
+}
+
+/* بخش تولید محتوا */
+.setia-content-generator {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.setia-content-preview {
+    background-color: var(--setia-bg);
+    border-radius: var(--setia-radius);
+    box-shadow: var(--setia-shadow);
+    padding: 20px;
+    min-height: 300px;
+    border: 1px solid var(--setia-border);
+}
+
+@media (max-width: 992px) {
+    .setia-content-generator {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* بخش تاریخچه */
+.setia-history-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.setia-history-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.setia-history-bulk-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* استایل برای ویژگی‌های خاص صفحه تاریخچه و صفحه اصلی */
+.setia-history-item {
+    cursor: pointer;
+}
+
+.setia-history-item.selected {
+    background-color: rgba(0, 120, 215, 0.1);
+}
+
+.setia-content-tools {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* استایل برای نمایش تصویر */
+.setia-image-preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--setia-radius);
+    margin-top: 10px;
+    border: 1px solid var(--setia-border);
+}
+
+/* استایل برای نوار پیشرفت */
+.setia-progress {
+    height: 8px;
+    background-color: var(--setia-light);
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.setia-progress-bar {
+    height: 100%;
+    background-color: var(--setia-primary);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+} 

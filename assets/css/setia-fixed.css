@@ -1,0 +1,392 @@
+/*
+ * SETIA Content Generator - Fixed CSS
+ * فایل CSS تمیز و بهبود یافته برای حل مشکلات بارگذاری
+ */
+
+/* نشانگر بارگذاری موفق حذف شد */
+
+/* رفع مشکل footer-thankyou */
+.footer-thankyou,
+#footer-thankyou,
+[class*="footer-thankyou"],
+[id*="footer-thankyou"] {
+    display: none !important;
+    visibility: hidden !important;
+    position: static !important;
+    z-index: -1 !important;
+}
+
+/* اطمینان از عدم نمایش عناصر اضافی در فرم */
+.setia-main-page .footer-thankyou,
+.setia-main-page #footer-thankyou,
+.setia-section .footer-thankyou,
+.setia-section #footer-thankyou {
+    display: none !important;
+}
+
+/* رفع مشکل positioning عناصر اضافی */
+.setia-main-page *[style*="position: fixed"],
+.setia-main-page *[style*="position: absolute"] {
+    position: static !important;
+}
+
+/* حذف عناصر تشکر اضافی */
+*[class*="thank"],
+*[id*="thank"] {
+    display: none !important;
+}
+
+/* رفع مشکل footer-upgrade */
+.footer-upgrade,
+#footer-upgrade,
+[class*="footer-upgrade"],
+[id*="footer-upgrade"],
+.upgrade-footer,
+#upgrade-footer,
+[class*="upgrade-footer"],
+[id*="upgrade-footer"] {
+    display: none !important;
+    visibility: hidden !important;
+    position: static !important;
+    z-index: -1 !important;
+}
+
+/* اطمینان از عدم نمایش عناصر upgrade در فرم */
+.setia-main-page .footer-upgrade,
+.setia-main-page #footer-upgrade,
+.setia-main-page .upgrade-footer,
+.setia-main-page #upgrade-footer,
+.setia-section .footer-upgrade,
+.setia-section #footer-upgrade,
+.setia-section .upgrade-footer,
+.setia-section #upgrade-footer {
+    display: none !important;
+}
+
+/* حذف تمام عناصر مربوط به upgrade */
+*[class*="upgrade"],
+*[id*="upgrade"] {
+    display: none !important;
+}
+
+/* حذف footer های مختلف وردپرس */
+#wpfooter,
+.wp-admin #wpfooter,
+#footer,
+.footer,
+[class*="footer"]:not(.setia-footer):not([class*="setia"]) {
+    display: none !important;
+}
+
+/* متغیرهای CSS کامل */
+:root {
+    /* رنگ‌های اصلی */
+    --setia-primary: #6244EC;
+    --setia-primary-50: #f0f4ff;
+    --setia-primary-100: #e0e7ff;
+    --setia-primary-500: #6244EC;
+    --setia-primary-600: #5234DB;
+    --setia-primary-700: #4338ca;
+    --setia-primary-dark: #4338ca;
+    
+    --setia-secondary: #428df5;
+    --setia-accent: #10a37f;
+    --setia-success: #10b981;
+    --setia-error: #f43f5e;
+    --setia-warning: #f59e0b;
+    
+    /* رنگ‌های خاکستری */
+    --setia-white: #ffffff;
+    --setia-black: #000000;
+    --setia-gray-50: #f9fafb;
+    --setia-gray-100: #f3f4f6;
+    --setia-gray-200: #e5e7eb;
+    --setia-gray-300: #d1d5db;
+    --setia-gray-400: #9ca3af;
+    --setia-gray-500: #6b7280;
+    --setia-gray-600: #4b5563;
+    --setia-gray-700: #374151;
+    --setia-gray-800: #1f2937;
+    --setia-gray-900: #111827;
+    
+    /* فاصله‌ها */
+    --setia-space-1: 0.25rem;
+    --setia-space-2: 0.5rem;
+    --setia-space-3: 0.75rem;
+    --setia-space-4: 1rem;
+    --setia-space-5: 1.25rem;
+    --setia-space-6: 1.5rem;
+    --setia-space-8: 2rem;
+    --setia-space-10: 2.5rem;
+    --setia-space-12: 3rem;
+    
+    /* اندازه متن */
+    --setia-text-xs: 0.75rem;
+    --setia-text-sm: 0.875rem;
+    --setia-text-base: 1rem;
+    --setia-text-lg: 1.125rem;
+    --setia-text-xl: 1.25rem;
+    --setia-text-2xl: 1.5rem;
+    --setia-text-3xl: 1.875rem;
+    --setia-text-4xl: 2.25rem;
+    
+    /* شعاع گوشه */
+    --setia-radius: 8px;
+    --setia-radius-sm: 6px;
+    --setia-radius-lg: 12px;
+    --setia-radius-xl: 16px;
+    --setia-radius-2xl: 20px;
+    --setia-radius-full: 9999px;
+    
+    /* سایه */
+    --setia-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --setia-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --setia-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --setia-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --setia-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    --setia-shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    
+    /* انتقال */
+    --setia-transition: all 0.2s ease;
+    --setia-transition-fast: all 0.15s ease;
+    --setia-transition-slow: all 0.3s ease;
+    --setia-transition-bounce: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* گرادیان */
+    --setia-gradient-primary: linear-gradient(135deg, #6244EC 0%, #428df5 100%);
+    --setia-gradient-light: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    --setia-gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --setia-gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* استایل‌های پایه */
+.setia-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--setia-space-6);
+    background: var(--setia-white);
+    border-radius: var(--setia-radius-lg);
+    box-shadow: var(--setia-shadow-lg);
+}
+
+.setia-section {
+    background: var(--setia-white);
+    border-radius: var(--setia-radius-lg);
+    box-shadow: var(--setia-shadow);
+    border: 1px solid var(--setia-gray-200);
+    margin-bottom: var(--setia-space-8);
+    overflow: hidden;
+    transition: var(--setia-transition);
+}
+
+.setia-section:hover {
+    box-shadow: var(--setia-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.setia-section-header {
+    background: var(--setia-gradient-light);
+    padding: var(--setia-space-6);
+    border-bottom: 1px solid var(--setia-gray-200);
+    display: flex;
+    align-items: center;
+    gap: var(--setia-space-4);
+}
+
+.setia-section-icon {
+    background: var(--setia-gradient-primary);
+    color: var(--setia-white);
+    padding: var(--setia-space-3);
+    border-radius: var(--setia-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: var(--setia-text-xl);
+}
+
+.setia-section-title h2 {
+    margin: 0;
+    font-size: var(--setia-text-2xl);
+    font-weight: 700;
+    color: var(--setia-gray-900);
+}
+
+.setia-section-title p {
+    margin: var(--setia-space-1) 0 0 0;
+    font-size: var(--setia-text-base);
+    color: var(--setia-gray-600);
+}
+
+.setia-section-content {
+    padding: var(--setia-space-8);
+}
+
+/* فرم‌ها */
+.setia-form-group {
+    margin-bottom: var(--setia-space-6);
+}
+
+.setia-label {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-space-2);
+    font-size: var(--setia-text-base);
+    font-weight: 600;
+    color: var(--setia-gray-800);
+    margin-bottom: var(--setia-space-2);
+}
+
+.setia-input,
+.setia-select {
+    width: 100%;
+    padding: var(--setia-space-3) var(--setia-space-4);
+    border: 2px solid var(--setia-gray-300);
+    border-radius: var(--setia-radius);
+    font-size: var(--setia-text-base);
+    transition: var(--setia-transition);
+    background: var(--setia-white);
+    direction: rtl;
+    text-align: right;
+}
+
+.setia-input:focus,
+.setia-select:focus {
+    outline: none;
+    border-color: var(--setia-primary);
+    box-shadow: 0 0 0 3px rgba(98, 68, 236, 0.1);
+}
+
+.setia-input:hover,
+.setia-select:hover {
+    border-color: var(--setia-gray-400);
+}
+
+/* دکمه‌ها */
+.setia-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--setia-space-2);
+    padding: var(--setia-space-3) var(--setia-space-6);
+    border: none;
+    border-radius: var(--setia-radius);
+    font-size: var(--setia-text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--setia-transition);
+    text-decoration: none;
+}
+
+.setia-button-primary {
+    background: var(--setia-gradient-primary);
+    color: var(--setia-white);
+    box-shadow: var(--setia-shadow);
+}
+
+.setia-button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--setia-shadow-lg);
+}
+
+.setia-button-large {
+    padding: var(--setia-space-4) var(--setia-space-8);
+    font-size: var(--setia-text-lg);
+}
+
+/* راهنما */
+.setia-help-content {
+    margin-top: var(--setia-space-4);
+    background: var(--setia-gray-50);
+    border-radius: var(--setia-radius);
+    border: 1px solid var(--setia-gray-200);
+    overflow: hidden;
+}
+
+.setia-help-toggle {
+    background: none;
+    border: none;
+    padding: var(--setia-space-3) var(--setia-space-4);
+    color: var(--setia-primary);
+    font-size: var(--setia-text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+    direction: rtl;
+}
+
+.setia-help-steps {
+    padding: var(--setia-space-6);
+    background: var(--setia-white);
+    border-top: 1px solid var(--setia-gray-200);
+    display: none;
+}
+
+.setia-help-steps.active {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .setia-container {
+        padding: var(--setia-space-4);
+    }
+    
+    .setia-section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--setia-space-3);
+    }
+    
+    .setia-section-content {
+        padding: var(--setia-space-6);
+    }
+    
+    .setia-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.setia-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.setia-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* حالت تاریک */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --setia-white: #1f2937;
+        --setia-gray-50: #374151;
+        --setia-gray-100: #4b5563;
+        --setia-gray-900: #f9fafb;
+    }
+}
+
+/* چاپ */
+@media print {
+    .setia-section {
+        border: 1px solid #000;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+    
+    .setia-button {
+        display: none;
+    }
+}

@@ -1,0 +1,186 @@
+/* assets/css/scheduler.css */
+
+/* General Styles */
+.setia-scheduler-wrap {
+    font-family: 'IRANSans', Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.setia-scheduler-wrap h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.setia-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.setia-card h2 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.setia-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 26px;
+    height: 28px;
+    margin: 0;
+    padding: 0 10px 1px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    border-color: #ccc;
+    color: #555;
+}
+
+.setia-button:hover {
+    background: #fafafa;
+    border-color: #999;
+    color: #23282d;
+}
+
+.setia-primary-button {
+    background: #007cba;
+    border-color: #007cba;
+    color: #fff;
+}
+
+.setia-primary-button:hover {
+    background: #0089cc;
+    border-color: #0089cc;
+    color: #fff;
+}
+
+.setia-danger-button {
+    background: #d63638;
+    border-color: #d63638;
+    color: #fff;
+}
+
+.setia-danger-button:hover {
+    background: #e03c3e;
+    border-color: #e03c3e;
+    color: #fff;
+}
+
+
+/* Form Styles */
+.setia-form .setia-form-group {
+    margin-bottom: 15px;
+}
+
+.setia-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.setia-form .setia-input,
+.setia-form .setia-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    max-width: 100% !important;
+}
+
+.setia-form .setia-form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.setia-form .setia-form-row .setia-form-group {
+    flex: 1;
+}
+
+.setia-form .setia-form-actions {
+    margin-top: 20px;
+}
+
+.setia-form .setia-input[type="number"] {
+    background: #f7f7f7;
+    width: 100% !important;
+    -moz-appearance: textfield;
+}
+.setia-form .setia-input[type="number"]::-webkit-inner-spin-button,
+.setia-form .setia-input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Table Styles */
+.setia-schedules-list .wp-list-table {
+    margin-top: 15px;
+}
+
+.setia-schedules-list .status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.setia-schedules-list .status-inactive {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.setia-schedules-list .setia-actions button {
+    margin-left: 5px;
+}
+
+/* Loading Spinner */
+.setia-loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tabs */
+.setia-tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.setia-tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-bottom: -1px;
+    border-radius: 4px 4px 0 0;
+}
+.setia-tab.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.setia-tab-content {
+    display: none;
+}
+.setia-tab-content.active {
+    display: block;
+}

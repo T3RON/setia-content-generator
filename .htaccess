@@ -1,0 +1,34 @@
+# Allow access to all files by default
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+# Allow WordPress to handle requests properly
+RewriteRule ^index\.php$ - [L]
+</IfModule>
+
+# Prevent direct access to PHP files
+<FilesMatch "\.php$">
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</FilesMatch>
+
+# PHP settings
+<IfModule mod_php7.c>
+  php_flag display_errors Off
+  php_value max_execution_time 300
+  php_value memory_limit 256M
+  php_value post_max_size 64M
+  php_value upload_max_filesize 64M
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule> 

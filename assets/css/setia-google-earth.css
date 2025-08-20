@@ -1,0 +1,407 @@
+/**
+ * SETIA Content Generator - Google Earth Schema Style
+ * استایل مشابه Google Earth برای تمام صفحات افزونه
+ */
+
+:root {
+    /* رنگ‌های اصلی Google Earth */
+    --setia-primary: #4a6bef;
+    --setia-primary-dark: #3854c8;
+    --setia-secondary: #6c49b8;
+    --setia-accent: #ff7043;
+    --setia-bg-light: #f8f9fc;
+    --setia-success: #43a047;
+    --setia-warning: #ff9800;
+    --setia-error: #f44336;
+    --setia-gray-100: #f5f5f5;
+    --setia-gray-200: #eeeeee;
+    --setia-gray-300: #e0e0e0;
+    --setia-gray-400: #bdbdbd;
+    --setia-gray-500: #9e9e9e;
+    --setia-text-dark: #202124;
+    --setia-text-medium: #5f6368;
+    --setia-text-light: #80868b;
+    --setia-gradient-primary: linear-gradient(135deg, var(--setia-primary) 0%, var(--setia-secondary) 100%);
+    --setia-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --setia-border-radius: 8px;
+}
+
+/* استایل‌های عمومی */
+.wrap .setia-main-container,
+.wrap .setia-schema-wrap,
+.wrap .setia-history-wrap,
+.wrap .setia-settings-wrapper {
+    background-color: var(--setia-bg-light);
+    border-radius: var(--setia-border-radius);
+    box-shadow: var(--setia-box-shadow);
+    margin: 20px 0;
+    padding: 25px;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'IRANSans', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* نوار رنگی بالای کانتینر */
+.wrap .setia-main-container::before,
+.wrap .setia-schema-wrap::before,
+.wrap .setia-history-wrap::before,
+.wrap .setia-settings-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--setia-gradient-primary);
+}
+
+/* هدر صفحات */
+.setia-header,
+.setia-settings-header,
+.setia-schema-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--setia-gray-300);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* عنوان صفحات */
+.setia-header h1,
+.setia-settings-header h1,
+.setia-schema-header h1,
+.setia-settings-title h1 {
+    color: var(--setia-primary);
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* آیکون عنوان */
+.setia-header h1 .dashicons,
+.setia-settings-header h1 .dashicons,
+.setia-schema-header h1 .dashicons {
+    background: var(--setia-primary);
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* کارت‌ها */
+.setia-card,
+.setia-schema-card {
+    background-color: white;
+    border: 1px solid var(--setia-gray-300);
+    border-radius: var(--setia-border-radius);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.setia-card:hover,
+.setia-schema-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* هدر کارت */
+.setia-card-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--setia-gray-300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setia-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--setia-primary);
+    margin: 0;
+}
+
+.setia-card-description {
+    color: var(--setia-text-medium);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* باکس توضیحات */
+.setia-description-box,
+.setia-schema-description {
+    background-color: #e8f0fe;
+    border-right: 4px solid var(--setia-primary);
+    color: var(--setia-text-dark);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--setia-border-radius);
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.setia-description-box:hover,
+.setia-schema-description:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.setia-description-box p,
+.setia-schema-description p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* دکمه‌ها */
+.setia-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--setia-border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    gap: 8px;
+}
+
+.setia-btn-primary {
+    background: var(--setia-gradient-primary);
+    color: white;
+    box-shadow: 0 2px 10px rgba(74, 107, 239, 0.3);
+}
+
+.setia-btn-primary:hover {
+    box-shadow: 0 4px 15px rgba(74, 107, 239, 0.5);
+    transform: translateY(-2px);
+}
+
+.setia-btn-secondary {
+    background-color: white;
+    color: var(--setia-primary);
+    border: 1px solid var(--setia-primary);
+}
+
+.setia-btn-secondary:hover {
+    background-color: var(--setia-gray-100);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.setia-btn-success {
+    background-color: var(--setia-success);
+    color: white;
+}
+
+.setia-btn-success:hover {
+    background-color: #388e3c;
+    box-shadow: 0 2px 8px rgba(67, 160, 71, 0.3);
+}
+
+.setia-btn-danger {
+    background-color: var(--setia-error);
+    color: white;
+}
+
+.setia-btn-danger:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* فرم‌ها */
+.setia-form-group {
+    margin-bottom: 20px;
+}
+
+.setia-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--setia-text-dark);
+}
+
+.setia-form-input,
+.setia-form-select,
+.setia-form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid var(--setia-gray-300);
+    border-radius: var(--setia-border-radius);
+    background-color: white;
+    color: var(--setia-text-dark);
+    transition: all 0.3s ease;
+}
+
+.setia-form-input:focus,
+.setia-form-select:focus,
+.setia-form-textarea:focus {
+    outline: none;
+    border-color: var(--setia-primary);
+    box-shadow: 0 0 0 3px rgba(74, 107, 239, 0.2);
+}
+
+.setia-form-help {
+    font-size: 12px;
+    color: var(--setia-text-light);
+    margin-top: 5px;
+}
+
+/* تب‌ها */
+.setia-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--setia-gray-300);
+    padding-bottom: 0;
+    overflow-x: auto;
+}
+
+.setia-tab-item {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--setia-text-medium);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.setia-tab-item:hover {
+    color: var(--setia-primary);
+}
+
+.setia-tab-item.active {
+    color: var(--setia-primary);
+    border-bottom: 2px solid var(--setia-primary);
+}
+
+.setia-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.setia-tab-content.active {
+    display: block;
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .setia-header,
+    .setia-settings-header,
+    .setia-schema-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .setia-tabs {
+        flex-wrap: wrap;
+    }
+} 
+
+/* Settings form actions and saving indicator */
+.setia-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--setia-card-bg, #fff);
+    border-radius: 8px;
+    box-shadow: var(--setia-card-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.setia-saving-indicator {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.setia-saving-indicator .spinner {
+    margin: 0 0.5rem 0 0;
+}
+
+.setia-saving-text {
+    color: var(--setia-primary-color, #4285f4);
+    font-weight: 500;
+}
+
+/* Button group for export/import */
+.setia-button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Make sure the settings form has proper spacing */
+#setia-settings-form {
+    padding-bottom: 2rem;
+}
+
+/* Add transition for smooth tab switching */
+.setia-tab-content {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: none;
+}
+
+.setia-tab-content.active {
+    opacity: 1;
+    display: block;
+} 
+
+/* API test result styles */
+.setia-test-result {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.setia-test-result.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+}
+
+.setia-test-result.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #d32f2f;
+    border-left: 4px solid #f44336;
+}
+
+.setia-test-result .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+} 

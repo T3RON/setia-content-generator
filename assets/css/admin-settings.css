@@ -1,0 +1,814 @@
+/**
+ * SETIA Plugin Admin Settings Styles
+ * Modern Windows 11 Flat Design System
+ * 
+ * @package SETIA
+ * @version 2.0.0
+ */
+
+/* CSS Custom Properties - Design System */
+:root {
+    /* Colors */
+    --setia-primary: #0078d4;
+    --setia-primary-hover: #106ebe;
+    --setia-primary-light: #deecf9;
+    
+    --setia-success: #10b981;
+    --setia-success-hover: #059669;
+    --setia-success-light: #d1fae5;
+    
+    --setia-warning: #f59e0b;
+    --setia-warning-hover: #d97706;
+    --setia-warning-light: #fef3c7;
+    
+    --setia-danger: #ef4444;
+    --setia-danger-hover: #dc2626;
+    --setia-danger-light: #fee2e2;
+    
+    --setia-info: #3b82f6;
+    --setia-info-hover: #2563eb;
+    --setia-info-light: #dbeafe;
+    
+    /* Grays */
+    --setia-gray-50: #fafafa;
+    --setia-gray-100: #f5f5f5;
+    --setia-gray-200: #e5e5e5;
+    --setia-gray-300: #d4d4d4;
+    --setia-gray-400: #a3a3a3;
+    --setia-gray-500: #737373;
+    --setia-gray-600: #525252;
+    --setia-gray-700: #404040;
+    --setia-gray-800: #262626;
+    --setia-gray-900: #171717;
+    
+    /* Spacing */
+    --setia-spacing-xs: 4px;
+    --setia-spacing-sm: 8px;
+    --setia-spacing-md: 16px;
+    --setia-spacing-lg: 24px;
+    --setia-spacing-xl: 32px;
+    --setia-spacing-2xl: 48px;
+    
+    /* Border Radius */
+    --setia-radius: 6px;
+    --setia-radius-lg: 8px;
+    --setia-radius-xl: 12px;
+    
+    /* Shadows */
+    --setia-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --setia-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --setia-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --setia-transition: all 0.2s ease-in-out;
+    --setia-transition-fast: all 0.15s ease-in-out;
+    
+    /* Typography */
+    --setia-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --setia-font-size-xs: 12px;
+    --setia-font-size-sm: 14px;
+    --setia-font-size-base: 16px;
+    --setia-font-size-lg: 18px;
+    --setia-font-size-xl: 20px;
+    --setia-font-size-2xl: 24px;
+    --setia-font-size-3xl: 30px;
+    
+    /* Line Heights */
+    --setia-leading-tight: 1.25;
+    --setia-leading-normal: 1.5;
+    --setia-leading-relaxed: 1.625;
+}
+
+/* Reset and Base Styles */
+.setia-settings-wrapper {
+    font-family: var(--setia-font-family);
+    font-size: var(--setia-font-size-base);
+    line-height: var(--setia-leading-normal);
+    color: var(--setia-gray-800);
+    background: var(--setia-gray-50);
+    margin: 0;
+    padding: var(--setia-spacing-lg);
+    min-height: 100vh;
+    direction: rtl;
+}
+
+.setia-settings-wrapper * {
+    box-sizing: border-box;
+}
+
+/* Notifications */
+.setia-notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--setia-spacing-md);
+    margin-bottom: var(--setia-spacing-lg);
+    border-radius: var(--setia-radius);
+    box-shadow: var(--setia-shadow);
+    transition: var(--setia-transition);
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideInDown 0.3s ease-out forwards;
+}
+
+@keyframes slideInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.setia-notification-success {
+    background: var(--setia-success-light);
+    border: 1px solid var(--setia-success);
+    color: var(--setia-success-hover);
+}
+
+.setia-notification-error {
+    background: var(--setia-danger-light);
+    border: 1px solid var(--setia-danger);
+    color: var(--setia-danger-hover);
+}
+
+.setia-notification-warning {
+    background: var(--setia-warning-light);
+    border: 1px solid var(--setia-warning);
+    color: var(--setia-warning-hover);
+}
+
+.setia-notification-info {
+    background: var(--setia-info-light);
+    border: 1px solid var(--setia-info);
+    color: var(--setia-info-hover);
+}
+
+.setia-notification-content {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-spacing-sm);
+}
+
+.setia-notification-icon {
+    flex-shrink: 0;
+}
+
+.setia-notification-close {
+    background: none;
+    border: none;
+    font-size: var(--setia-font-size-lg);
+    cursor: pointer;
+    padding: var(--setia-spacing-xs);
+    border-radius: var(--setia-radius);
+    transition: var(--setia-transition);
+    color: currentColor;
+    opacity: 0.7;
+}
+
+.setia-notification-close:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.setia-header {
+    background: white;
+    border-radius: var(--setia-radius-lg);
+    box-shadow: var(--setia-shadow);
+    margin-bottom: var(--setia-spacing-xl);
+    overflow: hidden;
+}
+
+.setia-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--setia-spacing-xl);
+}
+
+.setia-header-title h1 {
+    margin: 0 0 var(--setia-spacing-xs) 0;
+    font-size: var(--setia-font-size-3xl);
+    font-weight: 600;
+    color: var(--setia-gray-900);
+}
+
+.setia-header-title p {
+    margin: 0;
+    color: var(--setia-gray-600);
+    font-size: var(--setia-font-size-base);
+}
+
+.setia-header-status {
+    display: flex;
+    gap: var(--setia-spacing-md);
+}
+
+.setia-status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-spacing-sm);
+    padding: var(--setia-spacing-sm) var(--setia-spacing-md);
+    background: var(--setia-gray-100);
+    border-radius: var(--setia-radius);
+    font-size: var(--setia-font-size-sm);
+    font-weight: 500;
+}
+
+.setia-status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--setia-gray-400);
+    transition: var(--setia-transition);
+}
+
+.setia-status-item[data-status="connected"] .setia-status-indicator {
+    background: var(--setia-success);
+    box-shadow: 0 0 0 2px var(--setia-success-light);
+}
+
+.setia-status-item[data-status="disconnected"] .setia-status-indicator {
+    background: var(--setia-gray-400);
+}
+
+/* Form Container */
+.setia-form {
+    background: white;
+    border-radius: var(--setia-radius-lg);
+    box-shadow: var(--setia-shadow);
+    overflow: hidden;
+}
+
+/* Tab Navigation */
+.setia-tabs {
+    border-bottom: 1px solid var(--setia-gray-200);
+}
+
+.setia-tab-nav {
+    display: flex;
+    background: var(--setia-gray-50);
+}
+
+.setia-tab-button {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-spacing-sm);
+    padding: var(--setia-spacing-md) var(--setia-spacing-lg);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: var(--setia-transition);
+    font-size: var(--setia-font-size-base);
+    font-weight: 500;
+    color: var(--setia-gray-600);
+    white-space: nowrap;
+}
+
+.setia-tab-button:hover {
+    background: var(--setia-gray-100);
+    color: var(--setia-gray-800);
+}
+
+.setia-tab-button.active {
+    background: white;
+    color: var(--setia-primary);
+    border-bottom-color: var(--setia-primary);
+}
+
+.setia-tab-button svg {
+    flex-shrink: 0;
+}
+
+/* Tab Content */
+.setia-tab-content {
+    padding: var(--setia-spacing-xl);
+}
+
+.setia-tab-pane {
+    display: none;
+}
+
+.setia-tab-pane.active {
+    display: block;
+}
+
+/* Cards */
+.setia-card {
+    border: 1px solid var(--setia-gray-200);
+    border-radius: var(--setia-radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--setia-spacing-lg);
+}
+
+.setia-card:last-child {
+    margin-bottom: 0;
+}
+
+.setia-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-spacing-md);
+    padding: var(--setia-spacing-lg);
+    background: var(--setia-gray-50);
+    border-bottom: 1px solid var(--setia-gray-200);
+}
+
+.setia-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--setia-primary-light);
+    border-radius: var(--setia-radius);
+    color: var(--setia-primary);
+    flex-shrink: 0;
+}
+
+.setia-card-title h2 {
+    margin: 0 0 var(--setia-spacing-xs) 0;
+    font-size: var(--setia-font-size-xl);
+    font-weight: 600;
+    color: var(--setia-gray-900);
+}
+
+.setia-card-title p {
+    margin: 0;
+    color: var(--setia-gray-600);
+    font-size: var(--setia-font-size-sm);
+}
+
+.setia-card-body {
+    padding: var(--setia-spacing-lg);
+}
+
+/* Form Elements */
+.setia-form-group {
+    margin-bottom: var(--setia-spacing-lg);
+}
+
+.setia-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.setia-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--setia-spacing-lg);
+}
+
+.setia-label {
+    display: block;
+    margin-bottom: var(--setia-spacing-sm);
+    font-weight: 500;
+    color: var(--setia-gray-700);
+    font-size: var(--setia-font-size-sm);
+}
+
+.setia-required {
+    color: var(--setia-danger);
+    margin-right: var(--setia-spacing-xs);
+}
+
+.setia-optional {
+    color: var(--setia-gray-500);
+    font-weight: 400;
+    margin-right: var(--setia-spacing-xs);
+}
+
+.setia-input,
+.setia-select {
+    width: 100%;
+    padding: var(--setia-spacing-md);
+    border: 1px solid var(--setia-gray-300);
+    border-radius: var(--setia-radius);
+    font-size: var(--setia-font-size-base);
+    transition: var(--setia-transition);
+    background: white;
+    color: var(--setia-gray-800);
+}
+
+.setia-input:focus,
+.setia-select:focus {
+    outline: none;
+    border-color: var(--setia-primary);
+    box-shadow: 0 0 0 3px var(--setia-primary-light);
+}
+
+.setia-input::placeholder {
+    color: var(--setia-gray-400);
+}
+
+/* Help System */
+.setia-help {
+    margin-top: var(--setia-spacing-sm);
+}
+
+.setia-help-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--setia-spacing-xs);
+    padding: var(--setia-spacing-xs) var(--setia-spacing-sm);
+    background: var(--setia-gray-100);
+    border: 1px solid var(--setia-gray-300);
+    border-radius: var(--setia-radius);
+    cursor: pointer;
+    transition: var(--setia-transition);
+    font-size: var(--setia-font-size-sm);
+    color: var(--setia-gray-600);
+    text-decoration: none;
+}
+
+.setia-help-toggle:hover {
+    background: var(--setia-gray-200);
+    color: var(--setia-gray-800);
+}
+
+.setia-help-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: var(--setia-spacing-sm);
+}
+
+.setia-help-content.active {
+    max-height: 500px;
+}
+
+.setia-help-steps {
+    padding: var(--setia-spacing-md);
+    background: var(--setia-gray-50);
+    border: 1px solid var(--setia-gray-200);
+    border-radius: var(--setia-radius);
+}
+
+.setia-help-steps h4 {
+    margin: 0 0 var(--setia-spacing-sm) 0;
+    font-size: var(--setia-font-size-base);
+    color: var(--setia-gray-800);
+}
+
+.setia-help-steps ol {
+    margin: 0;
+    padding-right: var(--setia-spacing-lg);
+}
+
+.setia-help-steps li {
+    margin-bottom: var(--setia-spacing-xs);
+    color: var(--setia-gray-700);
+    font-size: var(--setia-font-size-sm);
+}
+
+.setia-help-steps a {
+    color: var(--setia-primary);
+    text-decoration: none;
+}
+
+.setia-help-steps a:hover {
+    text-decoration: underline;
+}
+
+/* Switch Component */
+.setia-switch-group {
+    display: flex;
+    align-items: center;
+    gap: var(--setia-spacing-md);
+}
+
+.setia-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.setia-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.setia-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--setia-gray-300);
+    transition: var(--setia-transition);
+    border-radius: 24px;
+}
+
+.setia-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: var(--setia-transition);
+    border-radius: 50%;
+    box-shadow: var(--setia-shadow);
+}
+
+.setia-switch input:checked + .setia-switch-slider {
+    background-color: var(--setia-primary);
+}
+
+.setia-switch input:checked + .setia-switch-slider:before {
+    transform: translateX(24px);
+}
+
+.setia-switch-label strong {
+    display: block;
+    color: var(--setia-gray-800);
+    font-size: var(--setia-font-size-base);
+    margin-bottom: var(--setia-spacing-xs);
+}
+
+.setia-switch-label p {
+    margin: 0;
+    color: var(--setia-gray-600);
+    font-size: var(--setia-font-size-sm);
+}
+
+/* Buttons */
+.setia-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--setia-spacing-sm);
+    padding: var(--setia-spacing-md) var(--setia-spacing-lg);
+    border: 1px solid transparent;
+    border-radius: var(--setia-radius);
+    font-size: var(--setia-font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--setia-transition);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 44px;
+}
+
+.setia-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.setia-button svg {
+    flex-shrink: 0;
+}
+
+/* Button Variants */
+.setia-button-primary {
+    background: var(--setia-primary);
+    color: white;
+    border-color: var(--setia-primary);
+}
+
+.setia-button-primary:hover:not(:disabled) {
+    background: var(--setia-primary-hover);
+    border-color: var(--setia-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--setia-shadow-md);
+}
+
+.setia-button-secondary {
+    background: var(--setia-gray-100);
+    color: var(--setia-gray-700);
+    border-color: var(--setia-gray-300);
+}
+
+.setia-button-secondary:hover:not(:disabled) {
+    background: var(--setia-gray-200);
+    border-color: var(--setia-gray-400);
+    transform: translateY(-2px);
+    box-shadow: var(--setia-shadow-md);
+}
+
+.setia-button-success {
+    background: var(--setia-success);
+    color: white;
+    border-color: var(--setia-success);
+}
+
+.setia-button-success:hover:not(:disabled) {
+    background: var(--setia-success-hover);
+    border-color: var(--setia-success-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.setia-button-warning {
+    background: var(--setia-warning);
+    color: white;
+    border-color: var(--setia-warning);
+}
+
+.setia-button-warning:hover:not(:disabled) {
+    background: var(--setia-warning-hover);
+    border-color: var(--setia-warning-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+}
+
+.setia-button-danger {
+    background: var(--setia-danger);
+    color: white;
+    border-color: var(--setia-danger);
+}
+
+.setia-button-danger:hover:not(:disabled) {
+    background: var(--setia-danger-hover);
+    border-color: var(--setia-danger-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Footer */
+.setia-footer {
+    background: var(--setia-gray-50);
+    border-top: 1px solid var(--setia-gray-200);
+    padding: var(--setia-spacing-xl);
+    margin-top: var(--setia-spacing-xl);
+}
+
+.setia-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--setia-spacing-lg);
+    margin-bottom: var(--setia-spacing-lg);
+}
+
+.setia-actions-primary,
+.setia-actions-secondary {
+    display: flex;
+    gap: var(--setia-spacing-md);
+}
+
+.setia-footer-info {
+    text-align: center;
+    padding-top: var(--setia-spacing-lg);
+    border-top: 1px solid var(--setia-gray-200);
+}
+
+.setia-footer-info p {
+    margin: 0;
+    color: var(--setia-gray-600);
+    font-size: var(--setia-font-size-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .setia-header-content {
+        flex-direction: column;
+        gap: var(--setia-spacing-lg);
+        text-align: center;
+    }
+
+    .setia-header-status {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .setia-settings-wrapper {
+        padding: var(--setia-spacing-md);
+    }
+
+    .setia-tab-nav {
+        flex-direction: column;
+    }
+
+    .setia-tab-button {
+        justify-content: center;
+        border-bottom: none;
+        border-right: 3px solid transparent;
+    }
+
+    .setia-tab-button.active {
+        border-right-color: var(--setia-primary);
+        border-bottom-color: transparent;
+    }
+
+    .setia-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .setia-footer-actions {
+        flex-direction: column;
+        gap: var(--setia-spacing-md);
+    }
+
+    .setia-actions-primary,
+    .setia-actions-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .setia-button {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .setia-header-content {
+        padding: var(--setia-spacing-lg);
+    }
+
+    .setia-tab-content {
+        padding: var(--setia-spacing-lg);
+    }
+
+    .setia-card-header,
+    .setia-card-body {
+        padding: var(--setia-spacing-md);
+    }
+
+    .setia-header-status {
+        flex-direction: column;
+        gap: var(--setia-spacing-sm);
+    }
+
+    .setia-status-item {
+        justify-content: center;
+    }
+}
+
+/* RTL Support */
+[dir="rtl"] .setia-settings-wrapper {
+    direction: rtl;
+}
+
+[dir="rtl"] .setia-help-steps ol {
+    padding-left: var(--setia-spacing-lg);
+    padding-right: 0;
+}
+
+[dir="rtl"] .setia-switch-slider:before {
+    left: auto;
+    right: 3px;
+}
+
+[dir="rtl"] .setia-switch input:checked + .setia-switch-slider:before {
+    transform: translateX(-24px);
+}
+
+/* Loading States */
+.setia-button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.setia-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focus Styles for Accessibility */
+.setia-button:focus,
+.setia-input:focus,
+.setia-select:focus,
+.setia-help-toggle:focus {
+    outline: 2px solid var(--setia-primary);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --setia-gray-300: #999;
+        --setia-gray-400: #666;
+        --setia-gray-500: #333;
+    }
+
+    .setia-card {
+        border-width: 2px;
+    }
+
+    .setia-button {
+        border-width: 2px;
+    }
+}
